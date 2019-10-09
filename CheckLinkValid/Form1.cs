@@ -154,7 +154,6 @@ namespace CheckLinkValid
 
         private string GetHTMLFromWebBrowser()
         {
-            browser.GetBrowser().MainFrame.ViewSource();
             Task<String> taskHtml = browser.GetBrowser().MainFrame.GetSourceAsync();
             string response = taskHtml.Result;
             return response;

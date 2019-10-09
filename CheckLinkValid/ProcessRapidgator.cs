@@ -48,7 +48,6 @@ namespace CheckLinkValid
 
         private string GetHTMLFromWebBrowser()
         {
-            browser.GetBrowser().MainFrame.ViewSource();
             Task<String> taskHtml = browser.GetBrowser().MainFrame.GetSourceAsync();
             string response = taskHtml.Result;
             return response;
@@ -71,8 +70,8 @@ namespace CheckLinkValid
                     ProcessFileNotValid(item);
                 }
 				WriteFile();
-                MessageBox.Show("Đã xử lý xong toàn bộ danh sách file");
                 this.Close();
+                MessageBox.Show("Đã xử lý xong toàn bộ danh sách file");
             }
             catch (Exception)
             {
@@ -97,8 +96,10 @@ namespace CheckLinkValid
                     {
                         var itemId = tableRows[1].QuerySelector("td > input.select-checkbox").Attributes["id"].Value;
                         browser.ExecuteScriptAsync("document.getElementById('" + itemId + "').click();");
-                        browser.ExecuteScriptAsync("checkBeforeMove();");
-                        browser.ExecuteScriptAsync("paste();");
+                        //browser.ExecuteScriptAsync("checkBeforeMove();");
+                        //browser.ExecuteScriptAsync("paste();");
+                        browser.ExecuteScriptAsync("checkBeforeCopy();");
+                        browser.ExecuteScriptAsync("copyPaste();");
                     }
                     else
                     {
