@@ -96,10 +96,8 @@ namespace CheckLinkValid
                     {
                         var itemId = tableRows[1].QuerySelector("td > input.select-checkbox").Attributes["id"].Value;
                         browser.ExecuteScriptAsync("document.getElementById('" + itemId + "').click();");
-                        //browser.ExecuteScriptAsync("checkBeforeMove();");
-                        //browser.ExecuteScriptAsync("paste();");
-                        browser.ExecuteScriptAsync("checkBeforeCopy();");
-                        browser.ExecuteScriptAsync("copyPaste();");
+                        browser.ExecuteScriptAsync("checkBeforeMove();");
+                        browser.ExecuteScriptAsync("paste();");
                     }
                     else
                     {
