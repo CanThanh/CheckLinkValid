@@ -98,6 +98,7 @@ namespace CheckLinkValid
                         browser.ExecuteScriptAsync("document.getElementById('" + itemId + "').click();");
                         browser.ExecuteScriptAsync("checkBeforeMove();");
                         browser.ExecuteScriptAsync("paste();");
+			Thread.Sleep(3000);
                     }
                     else
                     {
@@ -108,6 +109,7 @@ namespace CheckLinkValid
                             browser.ExecuteScriptAsync("document.getElementById('" + itemId + "').click();");
                             browser.ExecuteScriptAsync("checkBeforeCopy();");
                             browser.ExecuteScriptAsync("copyPaste();");
+			    Thread.Sleep(3000);
                         }
                         else
                         {
